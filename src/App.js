@@ -8,6 +8,7 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import Voicebot from './voicebot/Voicebot'
 
 class App extends Component {
   constructor () {
@@ -40,7 +41,7 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} />
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
-        
+
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
@@ -55,6 +56,11 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
         </main>
+
+        <section className="home-voicebot">
+          <h2>Write a message to robotify it</h2>
+          <Voicebot />
+        </section>
       </React.Fragment>
     )
   }
