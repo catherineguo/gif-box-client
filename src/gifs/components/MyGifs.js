@@ -36,7 +36,7 @@ class MyGifs extends Component {
           <h2>{gif.name}</h2>
           <a href={gif.gif_url} target="_blank"><img src={gif.gif_url} /></a>
           <br />
-          <button className='btn btn-danger' onClick={() => this.onDeleteGif(gif.id)}>Delete</button>
+          <button className='btn btn-danger' onClick={() => this.onDeleteGif(gif.id)}>Remove</button>
           <br />
         </React.Fragment>
       )

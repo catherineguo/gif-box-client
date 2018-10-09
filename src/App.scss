@@ -2,6 +2,7 @@ $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
+$gray: #dfdfdf;
 
 .flash-success,
 .flash-warning,
@@ -30,11 +31,13 @@ $charcoal: #ccc;
 }
 
 .auth-form {
+  background-color: $gray;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 15% auto 0;
+  margin: 5% auto;
   max-width: 600px;
+  padding: 5%;
 
   h3,
   input {
@@ -45,10 +48,4 @@ $charcoal: #ccc;
     align-self: flex-end;
     max-width: 200px;
   }
-}
-
-.title {
-  font-family: monospace;
-  margin-top: 20px;
-  text-align: center;
 }

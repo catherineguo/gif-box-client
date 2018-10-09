@@ -29,7 +29,7 @@ class SignIn extends Component {
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))
-      .then(() => history.push('/'))
+      .then(() => history.push('/my-gifs'))
       .catch(() => flash(messages.signInFailure, 'flash-error'))
   }
 

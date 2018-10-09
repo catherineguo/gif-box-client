@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+
 import apiUrl from '../../apiConfig.js'
 import axios from 'axios'
 import { handleErrors, newGif } from '../api'
@@ -21,11 +23,12 @@ class GifNew extends Component {
     event.preventDefault()
 
     const { name, gif_url } = this.state
-    const { flash, user } = this.props
+    const { flash, history, user } = this.props
 
     newGif(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.addNewGifSuccess, 'flash-success'))
+      .then(() => history.push('/my-gifs'))
       .catch(() => flash(messages.addNewGifFailure, 'flash-error'))
   }
 
@@ -34,7 +37,7 @@ class GifNew extends Component {
 
     return (
       <React.Fragment>
-        <form onSubmit={this.addNewGif}>
+        <form className='auth-form' onSubmit={this.addNewGif}>
           <h3>Add New Gif</h3>
 
           <label>Name</label>
@@ -62,4 +65,4 @@ class GifNew extends Component {
   }
 }
 
-export default GifNew
+export default withRouter(GifNew)
