@@ -1,14 +1,17 @@
 $charcoal: #bbb;
+$purple: #e6afff;
+$dark-purple: #6b1b69;
 
 .main-header {
   align-items: center;
-  // border-bottom: 1px solid $charcoal;
+  background-color: $purple;
   display: flex;
-  height: 100px;
+  height: 90px;
   padding: 0 20px;
 
   a,
   span {
+    color: $dark-purple;
     font-size: 1.2em;
     margin: 0 15px;
   }
@@ -41,7 +44,6 @@ $charcoal: #bbb;
 
     a,
     span {
-      border: 1px solid $charcoal;
       margin-bottom: 5px;
       text-align: center;
       width: 80%;

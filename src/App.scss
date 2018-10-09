@@ -47,9 +47,8 @@ $charcoal: #ccc;
   }
 }
 
-.home-voicebot {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.title {
+  font-family: monospace;
+  margin-top: 20px;
+  text-align: center;
 }
