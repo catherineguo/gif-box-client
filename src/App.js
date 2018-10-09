@@ -60,7 +60,7 @@ class App extends Component {
             <MyGifs user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/gifs/save-new' render={() => (
-            <GifNew user={user} />
+            <GifNew flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>

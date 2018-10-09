@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import apiUrl from '../../apiConfig.js'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { handleErrors, getGifs } from '../api'
+import messages from '../messages'
 
 class MyGifs extends Component {
   constructor () {
@@ -11,9 +13,13 @@ class MyGifs extends Component {
     }
   }
 
-  async componentDidMount() {
-    const response = await axios.get(`${apiUrl}/gifs`)
-    this.setState({gifs: response.data.gifs})
+  async componentDidMount () {
+    const { history, user } = this.props
+
+    const res = await getGifs(user)
+    const resJson = await res.json()
+
+    this.setState({gifs: resJson.gifs})
   }
 
   render () {
