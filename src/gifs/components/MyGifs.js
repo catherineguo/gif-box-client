@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import apiUrl from '../../apiConfig.js'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class MyGifs extends Component {
   constructor () {
@@ -26,6 +27,9 @@ class MyGifs extends Component {
     return (
       <div>
         <h1>My GIF Box</h1>
+        <div>
+          <Link to='/gifs/save-new'><button className='btn btn-primary'>Save New GIF</button></Link>
+        </div>
         {gifBox}
       </div>
     )

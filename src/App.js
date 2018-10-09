@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import MyGifs from './gifs/components/MyGifs'
+import GifNew from './gifs/components/GifNew'
 
 class App extends Component {
   constructor () {
@@ -57,6 +58,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/my-gifs' render={() => (
             <MyGifs user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/gifs/save-new' render={() => (
+            <GifNew user={user} />
           )} />
         </main>
       </React.Fragment>
