@@ -57,7 +57,7 @@ class App extends Component {
             <ChangePassword flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/my-gifs' render={() => (
-            <MyGifs user={user} />
+            <MyGifs flash={this.flash} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/gifs/save-new' render={() => (
             <GifNew flash={this.flash} user={user} />

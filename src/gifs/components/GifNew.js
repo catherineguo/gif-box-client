@@ -21,12 +21,11 @@ class GifNew extends Component {
     event.preventDefault()
 
     const { name, gif_url } = this.state
-    const { flash, history, user } = this.props
+    const { flash, user } = this.props
 
     newGif(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.addNewGifSuccess, 'flash-success'))
-      .then(() => history.push(`/gifs/${response.data.gif.id}/show`))
       .catch(() => flash(messages.addNewGifFailure, 'flash-error'))
   }
 

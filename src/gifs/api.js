@@ -33,3 +33,13 @@ export const newGif = (gif, user) => {
     })
   })
 }
+
+export const deleteGif = (id, user) => {
+  return fetch(apiUrl + '/gifs/' + id, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    }
+  })
+}
