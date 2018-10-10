@@ -38,7 +38,7 @@ class MyGifs extends Component {
           <a href={gif.gif_url} target="_blank"><img src={gif.gif_url} /></a>
           <br />
           <button className='btn btn-danger' onClick={() => this.onDeleteGif(gif.id)}>Remove</button>
-          <button className='btn btn-primary'>Edit Name</button>
+          <Link to={`/gifs/${gif.id}/edit`}><button className='btn btn-primary'>Edit GIF</button></Link>
         </div>
       )
     })

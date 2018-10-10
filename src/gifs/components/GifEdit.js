@@ -3,10 +3,10 @@ import { withRouter } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig.js'
 import axios from 'axios'
-import { handleErrors, newGif } from '../api'
+import { handleErrors, editGif } from '../api'
 import messages from '../messages'
 
-class GifNew extends Component {
+class GifEdit extends Component {
   constructor () {
     super()
     this.state = {
@@ -22,14 +22,15 @@ class GifNew extends Component {
   addNewGif = async (event) => {
     event.preventDefault()
 
+    const id = this.props.match.params.id
     const { name, gif_url } = this.state
     const { flash, history, user } = this.props
 
-    newGif(this.state, user)
+    editGif(id, this.state, user)
       .then(handleErrors)
-      .then(() => flash(messages.addNewGifSuccess, 'alert alert-success'))
+      .then(() => flash(messages.editGifSuccess, 'alert alert-success'))
       .then(() => history.push('/my-gifs'))
-      .catch(() => flash(messages.addNewGifFailure, 'alert alert-danger'))
+      .catch(() => flash(messages.editGifFailure, 'alert alert-danger'))
   }
 
   render() {
@@ -38,8 +39,7 @@ class GifNew extends Component {
     return (
       <React.Fragment>
         <form className='auth-form' onSubmit={this.addNewGif}>
-          <h3>Save New GIF</h3>
-
+          <h3>Edit GIF</h3>
           <label>Title</label>
           <input
             required
@@ -58,11 +58,11 @@ class GifNew extends Component {
             placeholder="GIF URL"
             onChange={this.handleChange}
           />
-          <button className='btn btn-secondary' type="submit">Save GIF</button>
+          <button className='btn btn-secondary' type="submit">Update GIF</button>
         </form>
       </React.Fragment>
     )
   }
 }
 
-export default withRouter(GifNew)
+export default withRouter(GifEdit)

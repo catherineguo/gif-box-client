@@ -34,6 +34,22 @@ export const newGif = (gif, user) => {
   })
 }
 
+export const editGif = (id, gif, user) => {
+  return fetch(apiUrl + '/gifs/' + id, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    },
+    body: JSON.stringify({
+      gif: {
+        name: gif.name,
+        gif_url: gif.gif_url
+      }
+    })
+  })
+}
+
 export const deleteGif = (id, user) => {
   return fetch(apiUrl + '/gifs/' + id, {
     method: 'DELETE',

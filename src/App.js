@@ -11,6 +11,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import MyGifs from './gifs/components/MyGifs'
 import GifNew from './gifs/components/GifNew'
+import GifEdit from './gifs/components/GifEdit'
 
 class App extends Component {
   constructor () {
@@ -64,6 +65,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/gifs/save-new' render={() => (
             <GifNew flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/gifs/:id/edit' render={() => (
+            <GifEdit flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>
