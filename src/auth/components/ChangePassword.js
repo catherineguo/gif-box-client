@@ -28,7 +28,7 @@ class ChangePassword extends Component {
     changePassword(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.changePasswordSuccess, 'alert alert-success'))
-      .then(() => history.push('/my-gifs'))
+      .then(() => history.push('/gif-box-client/my-gifs'))
       .catch(() => flash(messages.changePasswordFailure, 'alert alert-danger'))
   }
 
