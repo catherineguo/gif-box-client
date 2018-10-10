@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import apiUrl from '../../apiConfig.js'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { handleErrors, getGifs, deleteGif } from '../api'
 import messages from '../messages'
