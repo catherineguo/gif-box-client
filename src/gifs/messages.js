@@ -1,4 +1,4 @@
 export default {
-  addNewGifSuccess: 'Succesfully added your GIF!',
-  addNewGifFailure: 'Failed to add your GIF.',
+  addNewGifSuccess: 'Succesfully saved your GIF!',
+  addNewGifFailure: 'Failed to save your GIF.',
 }

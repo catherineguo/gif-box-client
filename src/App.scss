@@ -33,6 +33,10 @@ $gold: #B6882A;
   background-color: $error;
 }
 
+.alert {
+  text-align: center;
+}
+
 .auth-form {
   background-color: $gray;
   border: 3px solid $gold;
@@ -45,8 +49,9 @@ $gold: #B6882A;
   padding: 5%;
 
   h3,
+  p,
   input {
-    font-family: Quicksand, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin-bottom: 5%;
   }
 

@@ -3,6 +3,7 @@ $purple: #c659f7;
 $gray: #dfdfdf;
 $dark-purple: #6b1b69;
 $gold: #B6882A;
+$black: #000;
 
 .main-header {
   align-items: center;
@@ -13,9 +14,16 @@ $gold: #B6882A;
 
   a,
   span {
-    color: $gold;
     font-size: 1.2em;
     margin: 0 15px;
+  }
+
+  a {
+    color: $gold;
+  }
+
+  span {
+    color: $black;
   }
 }
 

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { handleErrors, getGifs, deleteGif } from '../api'
 import messages from '../messages'
+import './MyGifs.scss'
 
 class MyGifs extends Component {
   constructor () {
@@ -32,13 +33,13 @@ class MyGifs extends Component {
   render () {
     const gifBox = this.state.gifs.map(gif => {
       return (
-        <React.Fragment key={gif.id}>
+        <div className='gif-box' key={gif.id}>
           <h2>{gif.name}</h2>
           <a href={gif.gif_url} target="_blank"><img src={gif.gif_url} /></a>
           <br />
           <button className='btn btn-danger' onClick={() => this.onDeleteGif(gif.id)}>Remove</button>
-          <br />
-        </React.Fragment>
+          <button className='btn btn-primary'>Edit Name</button>
+        </div>
       )
     })
 
@@ -50,10 +51,14 @@ class MyGifs extends Component {
       <div>
         <h1>My GIF Box</h1>
         <div>
-          <Link to='/gifs/save-new'><button className='btn btn-primary'>Save New GIF</button></Link>
+          <center><Link to='/gifs/save-new'><button className='btn btn-warning new-gif-btn'>Save New GIF</button></Link>
+            <br />
+            {this.state.gifs.length === 0 ? noGifs : null}
+          </center>
         </div>
-        {this.state.gifs.length === 0 ? noGifs : null}
-        {gifBox}
+        <div className='gifs-container'>
+          {gifBox}
+        </div>
       </div>
     )
   }

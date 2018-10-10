@@ -6,7 +6,7 @@ import './LandingPage.scss'
 const unautheticatedBody = (
   <React.Fragment>
     <h1 className='title'>Welcome to GIF Box</h1>
-    <p>A place to store your favorite GIFs
+    <p>A place to save links to your favorite GIFs
       <br />
       <Link to="/sign-up">Sign up</Link> or <Link to="/sign-in">sign in</Link> to get started!
     </p>

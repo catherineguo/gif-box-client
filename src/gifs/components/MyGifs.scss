@@ -1,0 +1,35 @@
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.gif-box {
+  margin: 0 20px;
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  button {
+    margin: 20px 10px;
+  }
+
+  img {
+    height: auto;
+    max-width: 300px;
+  }
+}
+
+.gifs-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.new-gif-btn {
+  margin-bottom: 20px;
+}

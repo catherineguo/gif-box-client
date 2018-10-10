@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { handleErrors, signUp, signIn } from '../api'
 import messages from '../messages'
@@ -34,7 +34,7 @@ class SignUp extends Component {
       .then(res => setUser(res.user))
       .then(() => flash(messages.signUpSuccess, 'flash-success'))
       .then(() => history.push('/my-gifs'))
-      .catch(() => flash(messages.signUpFailure, 'flash-error'))
+      .catch(() => flash(messages.signUpFailure, 'alert alert-danger'))
   }
 
   render () {
@@ -71,6 +71,7 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
+        <p>Already have an account? <Link to='/sign-in'>Sign in</Link></p>
         <button className='btn btn-secondary' type="submit">Sign Up</button>
       </form>
     )
