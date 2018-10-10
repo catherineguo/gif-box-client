@@ -40,7 +40,7 @@ class GifEdit extends Component {
     editGif(id, this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.editGifSuccess, 'alert alert-success'))
-      .then(() => history.push('/my-gifs'))
+      .then(() => history.push('/gif-box-client/my-gifs'))
       .catch(() => flash(messages.editGifFailure, 'alert alert-danger'))
   }
 

@@ -28,7 +28,7 @@ class GifNew extends Component {
     newGif(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.addNewGifSuccess, 'alert alert-success'))
-      .then(() => history.push('/my-gifs'))
+      .then(() => history.push('/gif-box-client/my-gifs'))
       .catch(() => flash(messages.addNewGifFailure, 'alert alert-danger'))
   }
 

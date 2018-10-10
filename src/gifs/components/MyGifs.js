@@ -37,7 +37,7 @@ class MyGifs extends Component {
           <a href={gif.gif_url} target="_blank"><img src={gif.gif_url} /></a>
           <br />
           <button className='btn btn-danger' onClick={() => this.onDeleteGif(gif.id)}>Remove</button>
-          <Link to={`/gifs/${gif.id}/edit`}><button className='btn btn-primary'>Edit GIF</button></Link>
+          <Link to={`/gif-box-client/gifs/${gif.id}/edit`}><button className='btn btn-primary'>Edit GIF</button></Link>
         </div>
       )
     })
@@ -50,7 +50,7 @@ class MyGifs extends Component {
       <div>
         <h1>My GIF Box</h1>
         <div>
-          <center><Link to='/gifs/save-new'><button className='btn btn-warning new-gif-btn'>Save New GIF</button></Link>
+          <center><Link to='/gif-box-client/gifs/save-new'><button className='btn btn-warning new-gif-btn'>Save New GIF</button></Link>
             <br />
             {this.state.gifs.length === 0 ? noGifs : null}
           </center>

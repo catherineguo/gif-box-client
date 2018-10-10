@@ -51,25 +51,25 @@ class App extends Component {
           <Route exact path='/gif-box-client' render={() => (
             <LandingPage user={user} />
           )} />
-          <Route path='/sign-up' render={() => (
+          <Route path='/gif-box-client/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
           )} />
-          <Route path='/sign-in' render={() => (
+          <Route path='/gif-box-client/sign-in' render={() => (
             <SignIn flash={this.flash} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+          <AuthenticatedRoute user={user} path='/gif-box-client/sign-out' render={() => (
             <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} path='/gif-box-client/change-password' render={() => (
             <ChangePassword flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/my-gifs' render={() => (
+          <AuthenticatedRoute user={user} path='/gif-box-client/my-gifs' render={() => (
             <MyGifs flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/gifs/save-new' render={() => (
+          <AuthenticatedRoute user={user} path='/gif-box-client/gifs/save-new' render={() => (
             <GifNew flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/gifs/:id/edit' render={() => (
+          <AuthenticatedRoute user={user} path='/gif-box-client/gifs/:id/edit' render={() => (
             <GifEdit flash={this.flash} user={user} />
           )} />
         </main>

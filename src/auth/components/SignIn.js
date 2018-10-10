@@ -29,7 +29,7 @@ class SignIn extends Component {
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(res => setUser(res.user))
-      .then(() => history.push('/my-gifs'))
+      .then(() => history.push('/gif-box-client/my-gifs'))
       .catch(() => flash(messages.signInFailure, 'alert alert-danger'))
   }
 
@@ -57,7 +57,7 @@ class SignIn extends Component {
           placeholder="Password"
           onChange={this.handleChange}
         />
-        <p>Need to create an account? <Link to='/sign-up'>Sign up</Link></p>
+        <p>Need to create an account? <Link to='/gif-box-client/sign-up'>Sign up</Link></p>
         <button className='btn btn-secondary' type="submit">Sign In</button>
       </form>
     )

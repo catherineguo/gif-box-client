@@ -33,7 +33,7 @@ class SignUp extends Component {
       .then(res => res.json())
       .then(res => setUser(res.user))
       .then(() => flash(messages.signUpSuccess, 'alert alert-success'))
-      .then(() => history.push('/my-gifs'))
+      .then(() => history.push('/gif-box-client/my-gifs'))
       .catch(() => flash(messages.signUpFailure, 'alert alert-danger'))
   }
 
@@ -71,7 +71,7 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
-        <p>Already have an account? <Link to='/sign-in'>Sign in</Link></p>
+        <p>Already have an account? <Link to='/gif-box-client/sign-in'>Sign in</Link></p>
         <button className='btn btn-secondary' type="submit">Sign Up</button>
       </form>
     )
