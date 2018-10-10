@@ -9,7 +9,7 @@ class SignOut extends Component {
     const { flash, history, clearUser, user } = this.props
 
     signOut(user)
-      .finally(() => history.push('/'))
+      .finally(() => history.push('/gif-box-client/'))
       .finally(() => clearUser())
   }
 
