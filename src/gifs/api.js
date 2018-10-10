@@ -18,6 +18,16 @@ export const getGifs = (user) => {
   })
 }
 
+export const showGif = (id, user) => {
+  return fetch(apiUrl + '/gifs/' + id, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':`Token token=${user.token}`
+    }
+  })
+}
+
 export const newGif = (gif, user) => {
   return fetch(apiUrl + '/gifs', {
     method: 'POST',

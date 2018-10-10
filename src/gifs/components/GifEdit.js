@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig.js'
 import axios from 'axios'
-import { handleErrors, editGif } from '../api'
+import { handleErrors, showGif, editGif } from '../api'
 import messages from '../messages'
 
 class GifEdit extends Component {
@@ -15,11 +15,21 @@ class GifEdit extends Component {
     }
   }
 
+  async componentDidMount () {
+    const { user } = this.props
+    const id = this.props.match.params.id
+
+    const res = await showGif(id, user)
+    const resJson = await res.json()
+
+    this.setState({gif_url: resJson.gif.gif_url})
+  }
+
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
   })
 
-  addNewGif = async (event) => {
+  updateGif = async (event) => {
     event.preventDefault()
 
     const id = this.props.match.params.id
@@ -38,7 +48,7 @@ class GifEdit extends Component {
 
     return (
       <React.Fragment>
-        <form className='auth-form' onSubmit={this.addNewGif}>
+        <form className='auth-form' onSubmit={this.updateGif}>
           <h3>Edit GIF</h3>
           <label>Title</label>
           <input
