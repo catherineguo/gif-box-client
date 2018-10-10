@@ -48,6 +48,9 @@ class App extends Component {
           <Route exact path='/' render={() => (
             <LandingPage user={user} />
           )} />
+          <Route exact path='/gif-box-client' render={() => (
+            <LandingPage user={user} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp flash={this.flash} setUser={this.setUser} />
           )} />
