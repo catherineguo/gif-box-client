@@ -19,33 +19,14 @@ const unauthenticatedOptions = (
   </React.Fragment>
 )
 
-const authenticatedBody = (
-  <div></div>
-)
-
-const unautheticatedBody = (
-  <React.Fragment>
-    <h1 className='title'>Welcome to GIF Box</h1>
-    <p>Save your favorite gifs in your account!
-      <br />
-      <Link to="/sign-up">Sign up</Link> or <Link to="/sign-in">sign in</Link> to get started!
-      <br />
-      I love exclamation points!!!
-    </p>
-  </React.Fragment>
-)
-
 const Header = ({ user }) => (
-  <React.Fragment>
-    <header className="main-header">
-      <img src='https://i.imgur.com/fImhlEo.png'/>
-      <nav>
-        { user && <span>Welcome, {user.email}</span>}
-        { user ? authenticatedOptions : unauthenticatedOptions }
-      </nav>
-    </header>
-    { user ? authenticatedBody : unautheticatedBody }
-  </React.Fragment>
+  <header className="main-header">
+    <img className='logo' src='https://i.imgur.com/fImhlEo.png'/>
+    <nav>
+      { user && <span>Welcome, {user.email}</span>}
+      { user ? authenticatedOptions : unauthenticatedOptions }
+    </nav>
+  </header>
 )
 
 export default Header

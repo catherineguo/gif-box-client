@@ -38,7 +38,7 @@ class GifNew extends Component {
     return (
       <React.Fragment>
         <form className='auth-form' onSubmit={this.addNewGif}>
-          <h3>Add New Gif</h3>
+          <h3>Save New GIF</h3>
 
           <label>Name</label>
           <input
@@ -58,7 +58,7 @@ class GifNew extends Component {
             placeholder="GIF URL"
             onChange={this.handleChange}
           />
-          <button type="submit">Save GIF</button>
+          <button className='btn btn-secondary' type="submit">Save GIF</button>
         </form>
       </React.Fragment>
     )

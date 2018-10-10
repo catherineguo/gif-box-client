@@ -41,12 +41,18 @@ class MyGifs extends Component {
         </React.Fragment>
       )
     })
+
+    const noGifs = (
+      <p>{'It looks like you have no GIFs saved. Click "Save New GIF" to save one now!'}</p>
+    )
+
     return (
       <div>
         <h1>My GIF Box</h1>
         <div>
           <Link to='/gifs/save-new'><button className='btn btn-primary'>Save New GIF</button></Link>
         </div>
+        {this.state.gifs.length === 0 ? noGifs : null}
         {gifBox}
       </div>
     )

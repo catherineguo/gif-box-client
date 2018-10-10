@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
-$gray: #dfdfdf;
+$gray: #f3f3f3;
+$gold: #B6882A;
 
 .flash-success,
 .flash-warning,
@@ -32,6 +35,8 @@ $gray: #dfdfdf;
 
 .auth-form {
   background-color: $gray;
+  border: 3px solid $gold;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +46,7 @@ $gray: #dfdfdf;
 
   h3,
   input {
+    font-family: Quicksand, sans-serif;
     margin-bottom: 5%;
   }
 

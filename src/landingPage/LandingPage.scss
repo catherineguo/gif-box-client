@@ -1,0 +1,48 @@
+$charcoal: #bbb;
+$purple: #c659f7;
+$gray: #dfdfdf;
+$dark-purple: #6b1b69;
+$gold: #B6882A;
+
+.title,
+p {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Quicksand', sans-serif;
+}
+
+p {
+  font-size: 18px;
+}
+
+.logo {
+  height: auto;
+  width: 50px;
+}
+
+.welcome {
+  margin-top: 3%;
+  height: auto;
+  width: 300px;
+}
+
+a {
+  color: $gold;
+}
+
+@media (max-width: 600px) {
+  .title,
+  p {
+    margin-top: 5%;
+  }
+}
+
+@media (max-width: 450px) {
+  .title,
+  p {
+    margin-top: 7%;
+  }
+}

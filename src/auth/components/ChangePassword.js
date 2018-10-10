@@ -28,7 +28,7 @@ class ChangePassword extends Component {
     changePassword(this.state, user)
       .then(handleErrors)
       .then(() => flash(messages.changePasswordSuccess, 'flash-success'))
-      .then(() => history.push('/'))
+      .then(() => history.push('/my-gifs'))
       .catch(() => flash(messages.changePasswordFailure, 'flash-error'))
   }
 
@@ -39,13 +39,13 @@ class ChangePassword extends Component {
       <form className='auth-form' onSubmit={this.changePassword}>
         <h3>Change Password</h3>
 
-        <label htmlFor="oldpw">Old Password</label>
+        <label htmlFor="oldpw">Current Password</label>
         <input
           required
           name="oldPassword"
           value={oldPassword}
           type="password"
-          placeholder="Old Password"
+          placeholder="Current Password"
           onChange={this.handleChange}
         />
         <label htmlFor="newPassword">New Password</label>
@@ -57,7 +57,7 @@ class ChangePassword extends Component {
           placeholder="New Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Change Password</button>
+        <button className='btn btn-secondary' type="submit">Change Password</button>
       </form>
     )
   }

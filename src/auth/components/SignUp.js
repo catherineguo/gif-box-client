@@ -33,7 +33,7 @@ class SignUp extends Component {
       .then(res => res.json())
       .then(res => setUser(res.user))
       .then(() => flash(messages.signUpSuccess, 'flash-success'))
-      .then(() => history.push('/'))
+      .then(() => history.push('/my-gifs'))
       .catch(() => flash(messages.signUpFailure, 'flash-error'))
   }
 
@@ -71,7 +71,7 @@ class SignUp extends Component {
           placeholder="Confirm Password"
           onChange={this.handleChange}
         />
-        <button type="submit">Sign Up</button>
+        <button className='btn btn-secondary' type="submit">Sign Up</button>
       </form>
     )
   }
