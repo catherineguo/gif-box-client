@@ -22,6 +22,7 @@ class GifEdit extends Component {
     const res = await showGif(id, user)
     const resJson = await res.json()
 
+    this.setState({name: resJson.gif.name})
     this.setState({gif_url: resJson.gif.gif_url})
   }
 
@@ -50,6 +51,7 @@ class GifEdit extends Component {
       <React.Fragment>
         <form className='auth-form' onSubmit={this.updateGif}>
           <h3>Edit GIF</h3>
+          <center><img src={gif_url} /></center>
           <label>Title</label>
           <input
             required
