@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig.js'
-import axios from 'axios'
 import { handleErrors, newGif } from '../api'
 import messages from '../messages'
 

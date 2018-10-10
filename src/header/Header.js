@@ -5,6 +5,7 @@ import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
+    <Link to="/gif-box-client/search">Search GIFs</Link>
     <Link to="/gif-box-client/my-gifs">My GIF Box</Link>
     <Link to="/gif-box-client/change-password">Change Password</Link>
     <Link to="/gif-box-client/sign-out"><button className='btn btn-secondary'>Sign Out</button></Link>

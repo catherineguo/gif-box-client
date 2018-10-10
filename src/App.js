@@ -12,6 +12,7 @@ import ChangePassword from './auth/components/ChangePassword'
 import MyGifs from './gifs/components/MyGifs'
 import GifNew from './gifs/components/GifNew'
 import GifEdit from './gifs/components/GifEdit'
+import GifSearch from './gifs/components/GifSearch'
 
 class App extends Component {
   constructor () {
@@ -71,6 +72,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/gif-box-client/gifs/:id/edit' render={() => (
             <GifEdit flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/gif-box-client/search' render={() => (
+            <GifSearch flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>
