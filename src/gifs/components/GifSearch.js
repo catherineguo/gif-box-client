@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig.js'
 import messages from '../messages'
+import './GifSearch.scss'
 
 class GifSearch extends Component {
   constructor () {
@@ -22,7 +23,7 @@ class GifSearch extends Component {
 
     const { searchTerms } = this.state
 
-    fetch('https://api.tenor.com/v1/search?tag=' + this.state.searchTerms + '&key=9Y2VG4NM64AH&limit=8&contentfilter=medium')
+    fetch('https://api.tenor.com/v1/search?tag=' + this.state.searchTerms + '&key=9Y2VG4NM64AH&limit=12&contentfilter=medium')
       .then((res) => res.json())
       .then((data) => {
         this.setState({resultGifs: data.results})
@@ -33,9 +34,10 @@ class GifSearch extends Component {
 
   render() {
     const { searchTerms } = this.state
+    const tenorApiUrl = 'https://tenor.com/gifapi/documentation'
     const results = this.state.resultGifs.map(gif => {
       return (
-        <div key={gif.id}>
+        <div className='result-img' key={gif.id}>
           {console.log('this is gif.id', gif.id)}
           {console.log('this is gif.media[0].mediumgif.url', gif.media[0].mediumgif.url)}
           <a href={gif.media[0].mediumgif.url} target="_blank"><img src={gif.media[0].mediumgif.url} /></a>
@@ -46,20 +48,22 @@ class GifSearch extends Component {
 
     return (
       <React.Fragment>
-        <form onSubmit={this.searchGifs}>
+        <div className='search'>
           <h2>Search for GIFs</h2>
-          <h3>Powered by Tenor</h3>
-          <input
-            required
-            name="searchTerms"
-            value={searchTerms}
-            type="text"
-            placeholder="Search for GIFs"
-            onChange={this.handleChange}
-          />
-          <button className='btn btn-secondary' type="submit">Search</button>
-        </form>
-        <div>
+          <p>Powered by <a href={tenorApiUrl} target='_blank'>tenor</a></p>
+          <form className='search-bar' onSubmit={this.searchGifs}>
+            <input
+              required
+              name="searchTerms"
+              value={searchTerms}
+              type="text"
+              placeholder="Enter your search terms (e.g. happy, excited, sad)"
+              onChange={this.handleChange}
+            />
+            <button className='btn btn-secondary' type="submit">Search</button>
+          </form>
+        </div>
+        <div className='results-container'>
           {results}
         </div>
       </React.Fragment>

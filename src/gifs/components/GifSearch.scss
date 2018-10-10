@@ -1,0 +1,48 @@
+.search {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  margin-top: 5%;
+  text-align: center;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 5px;
+}
+
+.search-bar {
+  margin: 1% auto;
+  max-width: 600px;
+
+  input {
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 5%;
+    width: 400px;
+  }
+
+  button {
+    margin-left: 10px;
+    max-width: 200px;
+  }
+}
+
+.results-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.result-img {
+  margin: 0 20px;
+
+  img {
+    height: auto;
+    max-width: 300px;
+  }
+}

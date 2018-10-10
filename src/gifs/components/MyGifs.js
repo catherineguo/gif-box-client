@@ -49,8 +49,9 @@ class MyGifs extends Component {
     return (
       <div>
         <h1>My GIF Box</h1>
-        <div>
+        <div className='my-gifs'>
           <center><Link to='/gif-box-client/gifs/save-new'><button className='btn btn-warning new-gif-btn'>Save New GIF</button></Link>
+            <Link to='/gif-box-client/search'><button className='btn btn-warning new-gif-btn'>Search for GIFs</button></Link>
             <br />
             {this.state.gifs.length === 0 ? noGifs : null}
           </center>
