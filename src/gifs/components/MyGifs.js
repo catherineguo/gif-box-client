@@ -14,19 +14,25 @@ class MyGifs extends Component {
   }
 
   async componentDidMount () {
-    const { user } = this.props
+    const { flash, user } = this.props
+    try {
+      const res = await getGifs(user).catch((error) => flash(messages.genericFailure, 'alert alert-danger'))
+      const resJson = await res.json().catch((error) => flash(messages.genericFailure, 'alert alert-danger'))
 
-    const res = await getGifs(user)
-    const resJson = await res.json()
-
-    this.setState({gifs: resJson.gifs})
+      this.setState({gifs: resJson.gifs})
+    } catch (e) {
+      flash(messages.genericFailure, 'alert alert-danger')
+    }
   }
 
   async onDeleteGif (id) {
     const { flash, history, user } = this.props
-
-    await deleteGif (id, user)
-    this.setState({gifs: this.state.gifs.filter(gif => gif.id !== id)})
+    try {
+      await deleteGif (id, user).catch((error) => flash(messages.deleteFailure, 'flash-error'))
+      this.setState({gifs: this.state.gifs.filter(gif => gif.id !== id)})
+    } catch (e) {
+      flash(messages.deleteFailure, 'flash-error')
+    }
   }
 
   render () {

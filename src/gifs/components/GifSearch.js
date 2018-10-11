@@ -23,14 +23,14 @@ class GifSearch extends Component {
     event.preventDefault()
 
     const { searchTerms } = this.state
+    const { flash } = this.props
 
-    fetch('https://api.tenor.com/v1/search?tag=' + this.state.searchTerms + '&key=9Y2VG4NM64AH&limit=12&contentfilter=medium')
+    fetch('https://api.tenor.com/v1/search?q=' + this.state.searchTerms + '&key=9Y2VG4NM64AH&limit=12&contentfilter=medium')
       .then((res) => res.json())
       .then((data) => {
         this.setState({resultGifs: data.results})
-        console.log('this is gif results', this.state.resultGifs)
       })
-      .catch((error) => console.log('There was a problem in fetching data'))
+      .catch((error) => flash(messages.searchGifFailure, 'alert alert-danger'))
   }
 
   saveGif = async (name, gif_url) => {
