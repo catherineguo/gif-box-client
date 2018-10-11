@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import apiUrl from '../../apiConfig.js'
+import { handleErrors, newGif } from '../api'
 import messages from '../messages'
 import './GifSearch.scss'
 
@@ -32,16 +33,28 @@ class GifSearch extends Component {
       .catch((error) => console.log('There was a problem in fetching data'))
   }
 
+  saveGif = async (name, gif_url) => {
+
+    const gif = { name, gif_url }
+    const { flash, user } = this.props
+
+    newGif(gif, user)
+      .then(handleErrors)
+      .then(() => flash(messages.saveGifSuccess, 'flash-success'))
+      .catch(() => flash(messages.saveGifFailure, 'flash-error'))
+  }
+
   render() {
     const { searchTerms } = this.state
     const tenorApiUrl = 'https://tenor.com/gifapi/documentation'
     const results = this.state.resultGifs.map(gif => {
       return (
         <div className='result-img' key={gif.id}>
-          {console.log('this is gif.id', gif.id)}
-          {console.log('this is gif.media[0].mediumgif.url', gif.media[0].mediumgif.url)}
           <a href={gif.media[0].mediumgif.url} target="_blank"><img src={gif.media[0].mediumgif.url} /></a>
           <br />
+          <div className='save-gif'>
+            <button className='btn btn-warning' onClick={() => this.saveGif('tenor-' + gif.id, gif.media[0].mediumgif.url)}>Save GIF</button>
+          </div>
         </div>
       )
     })

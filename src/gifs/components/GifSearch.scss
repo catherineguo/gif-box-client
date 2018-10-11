@@ -1,3 +1,5 @@
+$gold: #B6882A;
+
 .search {
   display: flex;
   flex-direction: column;
@@ -6,13 +8,13 @@
 h1 {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  margin-top: 5%;
+  margin-top: 40px;
   text-align: center;
 }
 
 p {
   font-family: 'Quicksand', sans-serif;
-  margin-top: 5px;
+  margin-top: -30px;
 }
 
 .search-bar {
@@ -35,18 +37,23 @@ p {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .result-img {
   align-items: center;
+  border: solid 2px $gold;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 20px;
+  margin: 10px 15px;
+  padding: 15px;
 
   img {
     height: auto;
+    margin-top: 20px;
     max-width: 300px;
   }
 }
