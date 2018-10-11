@@ -45,15 +45,16 @@ class MyGifs extends Component {
     })
 
     const noGifs = (
-      <p>{'It looks like you have no GIFs saved. Click "Save New GIF" or "Search for GIFs" to get started!'}</p>
+      <p>{'It looks like you have no GIFs saved. Click "Search for GIFs" or "Save New GIF" to get started!'}</p>
     )
 
     return (
       <div>
         <h1>My GIF Box</h1>
         <div className='my-gifs'>
-          <center><Link to='/gif-box-client/gifs/save-new'><button className='btn btn-warning gif-option-btn'>Save New GIF</button></Link>
+          <center>
             <Link to='/gif-box-client/search'><button className='btn btn-warning gif-option-btn'>Search for GIFs</button></Link>
+            <Link to='/gif-box-client/gifs/save-new'><button className='btn btn-warning gif-option-btn'>Save New GIF</button></Link>
             <br />
             {this.state.gifs.length === 0 ? noGifs : null}
           </center>
