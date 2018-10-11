@@ -48,11 +48,16 @@ $gold: #B6882A;
   max-width: 600px;
   padding: 5%;
 
+  h2,
   h3,
   p,
   input {
     font-family: 'Quicksand', sans-serif;
     margin-bottom: 5%;
+  }
+
+  h2 {
+    font-weight: 600;
   }
 
   img {

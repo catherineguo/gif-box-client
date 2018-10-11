@@ -49,7 +49,7 @@ class GifSearch extends Component {
     return (
       <React.Fragment>
         <div className='search'>
-          <h2>Search for GIFs</h2>
+          <h1>Search for GIFs</h1>
           <p>Powered by <a href={tenorApiUrl} target='_blank'>tenor</a></p>
           <form className='search-bar' onSubmit={this.searchGifs}>
             <input
