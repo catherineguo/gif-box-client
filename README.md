@@ -44,3 +44,8 @@ Overall, I'm proud of how this project turned out, and I'm glad I stuck with usi
 ## Future Updates
 - Add v2 database: organize GIFs into folders.
 - Add validation on the front-end: only accept GIF URLs that end in '.gif'
+
+## Installation Instructions
+- Fork and clone this repository to your local device
+- Install dependencies with `npm install`
+- Run the app using `npm run start`
