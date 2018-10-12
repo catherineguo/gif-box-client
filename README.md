@@ -34,9 +34,14 @@ To view the ERDs for this project, please refer to the back end repo: https://gi
 ## Development
 This was my very first React app so I planned accordingly and spent most of my time working on the front end to get comfortable using this framework. Components, virtual DOM, and state were all new concepts to me that tripped me up during the first two days I worked on this project. On the second day, I almost decided to abandon using React for this app, but I took a break, talked with my classmates, did some "rubber ducking", and finally managed to get basic CRUD capability by lunch time on the third project day.
 
-As an added challenge, I wanted to incorporate a third party API, so I decided to use Tenor's GIF search API to provide search functionality for my app. It was much easier to use than I thought it would be, so by the end of the third day, the search feature was complete. The hardest part was figuring out where to find the URL to the gif in the JSON returned from the API call (it was in an object in an array in an object).
+As an added challenge, I wanted to incorporate a third party API, so I decided to use Tenor's GIF search API to provide search functionality for my app. It was much easier to use than I thought it would be, so by the end of the third day, the search feature was complete. The hardest part was figuring out where to find the URL to the gif in the JSON returned from the API call (it was in an object in an array in an object). I also needed to Google search how to use Fetch to make a GET request to the Tenor API.
 
 Overall, I'm proud of how this project turned out, and I'm glad I stuck with using React because I gained a new perspective on how to structure web apps.
+
+## Installation Instructions
+- Fork and clone this repository to your local device
+- Install dependencies with `npm install`
+- Run the app using `npm run start`
 
 ## Unsolved Problems
 - Currently I limit the number of GIFs returned from the GIF search because I have not incorporated pagination or infinite scrolling yet.
@@ -44,8 +49,3 @@ Overall, I'm proud of how this project turned out, and I'm glad I stuck with usi
 ## Future Updates
 - Add v2 database: organize GIFs into folders.
 - Add validation on the front-end: only accept GIF URLs that end in '.gif'
-
-## Installation Instructions
-- Fork and clone this repository to your local device
-- Install dependencies with `npm install`
-- Run the app using `npm run start`
