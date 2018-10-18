@@ -23,6 +23,7 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => (
   <header className="main-header">
     <img className='logo' src='https://i.imgur.com/fImhlEo.png'/>
+    <h2 className='brand-name'>GIF Box</h2>
     <nav>
       { user && <span>Welcome, {user.email}</span>}
       { user ? authenticatedOptions : unauthenticatedOptions }

@@ -1,15 +1,13 @@
 $charcoal: #bbb;
 $purple: #c659f7;
-$gray: #dfdfdf;
 $dark-purple: #6b1b69;
 $gold: #B6882A;
 $black: #000;
 
 .main-header {
   align-items: center;
-  background-color: $gray;
   display: flex;
-  height: 80px;
+  height: 75px;
   padding: 0 20px;
 
   a,
@@ -40,12 +38,19 @@ p {
   text-align: center;
 }
 
+.brand-name,
 .title {
   font-family: 'Quicksand', sans-serif;
 }
 
 p {
   font-size: 18px;
+}
+
+.brand-name {
+  color: $gold;
+  font-weight: 600;
+  margin: auto 10px;
 }
 
 .logo {
