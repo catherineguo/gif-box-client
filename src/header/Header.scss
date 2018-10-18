@@ -53,16 +53,10 @@ p {
   width: 50px;
 }
 
-.welcome {
-  margin-top: 3%;
-  height: auto;
-  width: 300px;
-}
-
 @media (max-width: 600px) {
   .main-header {
     flex-direction: column;
-    font-size: .7em;
+    font-size: .8em;
     height: auto;
     padding: 10px;
 

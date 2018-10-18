@@ -53,7 +53,7 @@ class GifSearch extends Component {
           <a href={gif.media[0].mediumgif.url} target="_blank"><img src={gif.media[0].mediumgif.url} /></a>
           <br />
           <div className='save-gif'>
-            <button className='btn btn-warning' onClick={() => this.saveGif('tenor-' + gif.id, gif.media[0].mediumgif.url)}>Save GIF</button>
+            <button className='btn btn-warning' onClick={() => this.saveGif('tenor-' + gif.id, gif.media[0].mediumgif.url)}><i className="fas fa-gift"></i> Save</button>
           </div>
         </div>
       )

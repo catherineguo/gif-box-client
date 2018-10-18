@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import apiUrl from '../../apiConfig.js'
 import { Link } from 'react-router-dom'
 import { handleErrors, getGifs, deleteGif } from '../api'
@@ -73,4 +74,4 @@ class MyGifs extends Component {
   }
 }
 
-export default MyGifs
+export default withRouter(MyGifs)

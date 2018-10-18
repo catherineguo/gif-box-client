@@ -15,9 +15,9 @@ const unautheticatedBody = (
 )
 
 const LandingPage = ({ user }) => (
-  <React.Fragment>
+  <div className='landing-page'>
     { user ? null : unautheticatedBody }
-  </React.Fragment>
+  </div>
 )
 
 export default LandingPage
