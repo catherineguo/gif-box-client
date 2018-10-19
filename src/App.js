@@ -42,7 +42,7 @@ class App extends Component {
     const { flashMessage, flashType, user } = this.state
 
     return (
-      <React.Fragment>
+      <div className='app-container'>
         <Header user={user} />
         {flashMessage && <h3 className={flashType}>{flashMessage}</h3>}
         <main className="container">
@@ -77,7 +77,7 @@ class App extends Component {
             <GifSearch flash={this.flash} user={user} />
           )} />
         </main>
-      </React.Fragment>
+      </div>
     )
   }
 }

@@ -7,6 +7,12 @@ $charcoal: #ccc;
 $gray: #f3f3f3;
 $gold: #B6882A;
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .flash-success,
 .flash-warning,
 .flash-error {
